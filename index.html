@@ -1,0 +1,337 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>DemoWave - create an interactive demo of your product without coding, in minutes!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <!--link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet"-->
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Favicons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="icon" href="images/favicon.png">
+    <link href="style.css" rel="stylesheet"/>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+        integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
+        crossorigin="anonymous"></script>
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+
+  </head>
+  <body>
+    
+<header class="site-header sticky-top py-1">
+  <nav class="container d-flex flex-column flex-md-row justify-content-between">
+    <a class="py-2" href="#" aria-label="Logo">
+        <img src="images/logo7a.png" class="logo-image"/>
+    </a>
+    <div class="w-100 text-center">
+        <a class="py-2 d-none d-md-inline-block link" href="#why">Why?</a>
+        <a class="py-2 d-none d-md-inline-block link" href="#for">Where to use</a>
+        <a class="py-2 d-none d-md-inline-block link" href="#works">How it works</a>
+        <a class="py-2 d-none d-md-inline-block link" href="#subscribe">Early access</a>
+    </div>
+    <div></div>
+  </nav>
+</header>
+
+<main>
+    <div class="position-relative overflow-hidden  text-center  hero">
+        <div class="col-md-6 p-lg-5 mx-auto mt-3 mb-2 back-dark">
+            <h1 class="display-4 fw-normal">Get more loyal customers faster via interactive demo</h1>
+            <h4 class="">
+                Let them try your product in action without signing up, meetings, and reading manuals
+            </p>
+        </div>
+        <div class="col-md-8 offset-md-2 back-dark">
+            <div class="demo-title">
+                <span>Here is an example of how the demo may look like</span>
+                <img src="images/arrow2.png"/>
+            </div>
+            <div class="demo-container" id="demoContainer">
+                <img src="images/screens/1.png" id="demo-image" />
+                <div class="overlay" id="overlay"></div>
+                <div class="start" id="start" onclick="demoNamespace.start()" >
+                    <i class="bi bi-play-circle-fill"></i>
+                    <span>Start the interactive demo</span>
+                </div>
+                <div class="player-progress">
+                    <!--div class="play-button"><i class="fas fa-play"></i></div>
+                    <div class="btn-separator"></div-->
+                    <div class="btn-block prev-button" onclick="demoNamespace.goToStep(-1)"><i class="fas fa-step-backward"></i></div>
+                    <div class="btn-block next-button" onclick="demoNamespace.goToStep(1)"><i class="fas fa-step-forward"></i></div>
+                    <div class="btn-separator"></div>
+                    <div class="player-progress-bar" id="progressBar"></div>
+                    <div class="btn-separator"></div>
+                    <div class="logo-link" title="DemoWave Player">
+                        <a href="https://www.demowave.io" target="_blank"><img src="images/logo7a.png" class="logo-image"/></a>
+                    </div>
+                </div>
+            </div>
+            <div class="my-5">
+                <a href="#subscribe" class="btn-cta">Get early access</a>
+            </div>
+        </div>
+    </div>
+    <!--svg viewBox="0 0 500 150" preserveAspectRatio="none" class="wave">
+        <path d="M0.00,92.27 C216.83,192.92 304.30,8.39 500.00,109.03 L500.00,0.00 L0.00,0.00 Z"></path>
+      </svg-->
+      <!--svg width="100%" height="100%" id="svg" viewBox="0 0 1440 500" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><defs><linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%"><stop offset="5%" stop-color="#0693e388"></stop><stop offset="95%" stop-color="#5b20b388"></stop></linearGradient></defs><path d="M 0,500 C 0,500 0,166 0,166 C 105.78947368421055,186.82296650717706 211.5789473684211,207.64593301435409 312,205 C 412.4210526315789,202.35406698564591 507.47368421052636,176.23923444976074 602,158 C 696.5263157894736,139.76076555023926 790.5263157894736,129.39712918660288 874,121 C 957.4736842105264,112.60287081339712 1030.421052631579,106.17224880382774 1123,114 C 1215.578947368421,121.82775119617226 1327.7894736842104,143.91387559808612 1440,166 C 1440,166 1440,500 1440,500 Z" stroke="none" stroke-width="0" fill="url(#gradient)" class="transition-all duration-300 ease-in-out delay-150 path-0" transform="rotate(-180 720 250)"></path><defs><linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%"><stop offset="5%" stop-color="#0693e3ff"></stop><stop offset="95%" stop-color="#5b20b3ff"></stop></linearGradient></defs><path d="M 0,500 C 0,500 0,333 0,333 C 104.78468899521536,349.10526315789474 209.56937799043072,365.2105263157895 297,351 C 384.4306220095693,336.7894736842105 454.50717703349267,292.2631578947369 546,286 C 637.4928229665073,279.7368421052631 750.4019138755982,311.7368421052631 846,335 C 941.5980861244018,358.2631578947369 1019.8851674641148,372.7894736842106 1116,371 C 1212.1148325358852,369.2105263157894 1326.0574162679427,351.1052631578947 1440,333 C 1440,333 1440,500 1440,500 Z" stroke="none" stroke-width="0" fill="url(#gradient)" class="transition-all duration-300 ease-in-out delay-150 path-1" transform="rotate(-180 720 250)"></path></svg-->
+      <!--svg width="100%" height="100%" id="svg" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><defs><linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%"><stop offset="5%" stop-color="#0693e388"></stop><stop offset="95%" stop-color="#5b20b388"></stop></linearGradient></defs><path d="M 0,400 C 0,400 0,133 0,133 C 83.69377990430621,145.4306220095694 167.38755980861242,157.86124401913875 277,147 C 386.6124401913876,136.13875598086125 522.1435406698565,101.98564593301437 614,84 C 705.8564593301435,66.01435406698563 754.0382775119616,64.19617224880382 840,84 C 925.9617224880384,103.80382775119618 1049.7033492822966,145.22966507177034 1156,157 C 1262.2966507177034,168.77033492822966 1351.1483253588517,150.88516746411483 1440,133 C 1440,133 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" class="transition-all duration-300 ease-in-out delay-150 path-0" transform="rotate(-180 720 200)"></path><defs><linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%"><stop offset="5%" stop-color="#0693e3ff"></stop><stop offset="95%" stop-color="#5b20b3ff"></stop></linearGradient></defs><path d="M 0,400 C 0,400 0,266 0,266 C 65.35885167464116,258.39234449760767 130.71770334928232,250.7846889952153 241,245 C 351.2822966507177,239.2153110047847 506.4880382775118,235.2535885167464 610,244 C 713.5119617224882,252.7464114832536 765.33014354067,274.2009569377991 838,278 C 910.66985645933,281.7990430622009 1004.1913875598086,267.94258373205736 1108,263 C 1211.8086124401914,258.05741626794264 1325.9043062200958,262.02870813397135 1440,266 C 1440,266 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" class="transition-all duration-300 ease-in-out delay-150 path-1" transform="rotate(-180 720 200)"></path></svg-->
+      <!--svg id="wave" style="transform:rotate(180deg); transition: 0.3s" viewBox="0 0 1440 360" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(31.643, 190.655, 196.23, 1)" offset="0%"></stop><stop stop-color="rgba(88.18, 72.528, 205.338, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,144L80,168C160,192,320,240,480,234C640,228,800,168,960,126C1120,84,1280,60,1440,48C1600,36,1760,36,1920,84C2080,132,2240,228,2400,222C2560,216,2720,108,2880,96C3040,84,3200,168,3360,210C3520,252,3680,252,3840,258C4000,264,4160,276,4320,258C4480,240,4640,192,4800,186C4960,180,5120,216,5280,204C5440,192,5600,132,5760,126C5920,120,6080,168,6240,156C6400,144,6560,72,6720,60C6880,48,7040,96,7200,138C7360,180,7520,216,7680,246C7840,276,8000,300,8160,306C8320,312,8480,300,8640,270C8800,240,8960,192,9120,144C9280,96,9440,48,9600,24C9760,0,9920,0,10080,54C10240,108,10400,216,10560,252C10720,288,10880,252,11040,228C11200,204,11360,192,11440,186L11520,180L11520,360L11440,360C11360,360,11200,360,11040,360C10880,360,10720,360,10560,360C10400,360,10240,360,10080,360C9920,360,9760,360,9600,360C9440,360,9280,360,9120,360C8960,360,8800,360,8640,360C8480,360,8320,360,8160,360C8000,360,7840,360,7680,360C7520,360,7360,360,7200,360C7040,360,6880,360,6720,360C6560,360,6400,360,6240,360C6080,360,5920,360,5760,360C5600,360,5440,360,5280,360C5120,360,4960,360,4800,360C4640,360,4480,360,4320,360C4160,360,4000,360,3840,360C3680,360,3520,360,3360,360C3200,360,3040,360,2880,360C2720,360,2560,360,2400,360C2240,360,2080,360,1920,360C1760,360,1600,360,1440,360C1280,360,1120,360,960,360C800,360,640,360,480,360C320,360,160,360,80,360L0,360Z"></path><defs><linearGradient id="sw-gradient-1" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(11.539, 94.129, 150.695, 1)" offset="0%"></stop><stop stop-color="rgba(0, 44.78, 125.65, 0.8)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 50px); opacity:0.9" fill="url(#sw-gradient-1)" d="M0,36L80,42C160,48,320,60,480,108C640,156,800,240,960,264C1120,288,1280,252,1440,198C1600,144,1760,72,1920,84C2080,96,2240,192,2400,210C2560,228,2720,168,2880,126C3040,84,3200,60,3360,84C3520,108,3680,180,3840,210C4000,240,4160,228,4320,216C4480,204,4640,192,4800,162C4960,132,5120,84,5280,78C5440,72,5600,108,5760,132C5920,156,6080,168,6240,156C6400,144,6560,108,6720,84C6880,60,7040,48,7200,66C7360,84,7520,132,7680,144C7840,156,8000,132,8160,114C8320,96,8480,84,8640,108C8800,132,8960,192,9120,234C9280,276,9440,300,9600,270C9760,240,9920,156,10080,114C10240,72,10400,72,10560,78C10720,84,10880,96,11040,132C11200,168,11360,228,11440,258L11520,288L11520,360L11440,360C11360,360,11200,360,11040,360C10880,360,10720,360,10560,360C10400,360,10240,360,10080,360C9920,360,9760,360,9600,360C9440,360,9280,360,9120,360C8960,360,8800,360,8640,360C8480,360,8320,360,8160,360C8000,360,7840,360,7680,360C7520,360,7360,360,7200,360C7040,360,6880,360,6720,360C6560,360,6400,360,6240,360C6080,360,5920,360,5760,360C5600,360,5440,360,5280,360C5120,360,4960,360,4800,360C4640,360,4480,360,4320,360C4160,360,4000,360,3840,360C3680,360,3520,360,3360,360C3200,360,3040,360,2880,360C2720,360,2560,360,2400,360C2240,360,2080,360,1920,360C1760,360,1600,360,1440,360C1280,360,1120,360,960,360C800,360,640,360,480,360C320,360,160,360,80,360L0,360Z"></path></svg-->
+    <svg id="wave" style="transform:rotate(180deg); transition: 0.3s" viewBox="0 0 1440 360" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(16.071, 157.133, 162.079, 1)" offset="0%"></stop><stop stop-color="rgba(81.603, 64.159, 212.168, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,144L80,168C160,192,320,240,480,234C640,228,800,168,960,126C1120,84,1280,60,1440,48C1600,36,1760,36,1920,84C2080,132,2240,228,2400,222C2560,216,2720,108,2880,96C3040,84,3200,168,3360,210C3520,252,3680,252,3840,258C4000,264,4160,276,4320,258C4480,240,4640,192,4800,186C4960,180,5120,216,5280,204C5440,192,5600,132,5760,126C5920,120,6080,168,6240,156C6400,144,6560,72,6720,60C6880,48,7040,96,7200,138C7360,180,7520,216,7680,246C7840,276,8000,300,8160,306C8320,312,8480,300,8640,270C8800,240,8960,192,9120,144C9280,96,9440,48,9600,24C9760,0,9920,0,10080,54C10240,108,10400,216,10560,252C10720,288,10880,252,11040,228C11200,204,11360,192,11440,186L11520,180L11520,360L11440,360C11360,360,11200,360,11040,360C10880,360,10720,360,10560,360C10400,360,10240,360,10080,360C9920,360,9760,360,9600,360C9440,360,9280,360,9120,360C8960,360,8800,360,8640,360C8480,360,8320,360,8160,360C8000,360,7840,360,7680,360C7520,360,7360,360,7200,360C7040,360,6880,360,6720,360C6560,360,6400,360,6240,360C6080,360,5920,360,5760,360C5600,360,5440,360,5280,360C5120,360,4960,360,4800,360C4640,360,4480,360,4320,360C4160,360,4000,360,3840,360C3680,360,3520,360,3360,360C3200,360,3040,360,2880,360C2720,360,2560,360,2400,360C2240,360,2080,360,1920,360C1760,360,1600,360,1440,360C1280,360,1120,360,960,360C800,360,640,360,480,360C320,360,160,360,80,360L0,360Z"></path><defs><linearGradient id="sw-gradient-1" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(8.749, 71.374, 114.266, 1)" offset="0%"></stop><stop stop-color="rgba(10.044, 3.946, 125.65, 0.8)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 50px); opacity:0.9" fill="url(#sw-gradient-1)" d="M0,36L80,42C160,48,320,60,480,108C640,156,800,240,960,264C1120,288,1280,252,1440,198C1600,144,1760,72,1920,84C2080,96,2240,192,2400,210C2560,228,2720,168,2880,126C3040,84,3200,60,3360,84C3520,108,3680,180,3840,210C4000,240,4160,228,4320,216C4480,204,4640,192,4800,162C4960,132,5120,84,5280,78C5440,72,5600,108,5760,132C5920,156,6080,168,6240,156C6400,144,6560,108,6720,84C6880,60,7040,48,7200,66C7360,84,7520,132,7680,144C7840,156,8000,132,8160,114C8320,96,8480,84,8640,108C8800,132,8960,192,9120,234C9280,276,9440,300,9600,270C9760,240,9920,156,10080,114C10240,72,10400,72,10560,78C10720,84,10880,96,11040,132C11200,168,11360,228,11440,258L11520,288L11520,360L11440,360C11360,360,11200,360,11040,360C10880,360,10720,360,10560,360C10400,360,10240,360,10080,360C9920,360,9760,360,9600,360C9440,360,9280,360,9120,360C8960,360,8800,360,8640,360C8480,360,8320,360,8160,360C8000,360,7840,360,7680,360C7520,360,7360,360,7200,360C7040,360,6880,360,6720,360C6560,360,6400,360,6240,360C6080,360,5920,360,5760,360C5600,360,5440,360,5280,360C5120,360,4960,360,4800,360C4640,360,4480,360,4320,360C4160,360,4000,360,3840,360C3680,360,3520,360,3360,360C3200,360,3040,360,2880,360C2720,360,2560,360,2400,360C2240,360,2080,360,1920,360C1760,360,1600,360,1440,360C1280,360,1120,360,960,360C800,360,640,360,480,360C320,360,160,360,80,360L0,360Z"></path></svg>
+    <br>
+      <div class="why-block" id="why">
+        <h1 class="text-center text-center mb-5 mt-3">Why Interactive Product Demo?</h1>
+        <div class="why-container d-flex row">
+            <div class="col-md-8 offset-md-2">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4  mb-1">
+                        <div class="why-card">
+                           <div class="icon blue">
+                                <i class="bi bi-credit-card"></i>
+                            </div>
+                            <div class="title">Engagement improves the conversion rate</div>
+                            <div class="text">
+                                If your potential customers can play with  your product without scheduling a demo and 
+                                even registration process, they make decision faster especially if your product is great 
+                                and useful.
+                            </div> 
+                        </div>
+                        
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 mb-1">
+                        <div class="why-card">
+                            <div class="icon violet">
+                                <i class="bi bi-magic"></i>
+                            </div>
+                            <div class="title">A Picture Is Worth A Thousand Words (Especially Interactive)</div>
+                            <div class="text">
+                                Often, it's not enough just to tell about your product and show a couple of 
+                                screenshots. Let them touch it, play with it, and you will see how fast they will 
+                                grasp the benefits of YOUR product.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4  mb-1">
+                        <div class="why-card">
+                            <div class="icon green">
+                                <i class="bi bi-graph-up-arrow"></i>
+                            </div>
+                            <div class="title">Help Your Customers All The Way</div>
+                            <div class="text">
+                                Instead of writing thousand pages of manuals and guides create interactive demos. 
+                                Embeddable tiny script will help to decrease the churn and support load and improve the 
+                                retention.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="why-block pt-3 mt-5" id="for">
+        <h1 class="text-center my-5">Use It For...</h1>
+        <div class="why-container d-flex row">
+            <div class="col-md-8 offset-md-2">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4  mb-1">
+                        <div class="why-card">
+                            <div class=""> 
+                                <img src="images/landing.png"/>
+                            </div>
+                            <div class="title">Landing Pages</div>
+                            <div class="text">Show your users your product before sign-ups</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4  mb-1">
+                        <div class="why-card">
+                            <div class=""> 
+                                <img src="images/mvp.png"/>
+                            </div>
+                            <div class="title">MVP</div>
+                            <div class="text">Show your users your product before it exists</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4  mb-1">
+                        <div class="why-card">
+                            <div class=""> 
+                                <img src="images/guide.png"/>
+                            </div>
+                            <div class="title">Guides and Manuals</div>
+                            <div class="text">Show your users the difficult moments</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="why-block pt-3 mt-5">
+        <h1 class="text-center my-5">Ideally if your product is...</h1>
+        <div class="why-container d-flex row">
+            <div class="col-md-8 offset-md-2">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4  mb-1">
+                        <div class="why-card">
+                            <div class=""> 
+                                <img src="images/complex.png"/>
+                            </div>
+                            <div class="title">Complex Digital Product</div>
+                            <div class="text">Easiest way to make the users familiar with your product.</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4  mb-1">
+                        <div class="why-card">
+                            <div class=""> 
+                                <img src="images/saas.png"/>
+                            </div>
+                            <div class="title">SaaS App</div>
+                            <div class="text">Let your users see what your app can do even before signing up.</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4  mb-1">
+                        <div class="why-card">
+                            <div class=""> 
+                                <img src="images/desktop.jpg"/>
+                            </div>
+                            <div class="title">Mobile / Desktop Apps</div>
+                            <div class="text">Users can sure it's what they need before downloading and installing.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="why-block works pt-3 mt-5" id="works">
+        <h1 class="text-center my-5">A no-coding, super-easy solution</h1>
+        <div class="why-container d-flex row mb-5 pt-5">
+            <div class="col-md-4 offset-md-2">
+                <img src="images/w1.png"/>
+            </div>
+            <div class="col-md-1"><div class="number"><span>1</span></div></div>
+            <div class="col-md-4">              
+                <div>
+                    <h2>Drag-and-drop visual tool</h2>
+                    <ul class="list">
+                        <li><i class="fas fa-square"></i><span>Upload screenshots</span></li>
+                        <li><i class="fas fa-square"></i><span>create the sequence and logic</span></li>
+                        <li><i class="fas fa-square"></i><span>define the hot spots</span></li>
+                        <li><i class="fas fa-square"></i><span>create custom labels</span></li>
+                        <li><i class="fas fa-square"></i><span>define the player's look</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="why-container d-flex row mb-5">
+            <div class="col-md-4 offset-md-2">
+                <img src="images/w2.png"/>
+            </div>
+            <div class="col-md-1"><div class="number"><span>2</span></div></div>
+            <div class="col-md-4">
+                <div>
+                    <h2>Start showing your demo</h2>
+                    <ul class="list">
+                        <li><i class="fas fa-square"></i>Copy a line of code onto your webpage</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="why-container d-flex row mb-5">
+            <div class="col-md-4 offset-md-2">
+                <img src="images/w3.png"/>
+            </div>
+            <div class="col-md-1"><div class="number"><span>3</span></div></div>
+            <div class="col-md-4">
+                <div>
+                    <h2>Enjoy more customers and analyze the results</h2>
+                    <ul class="list">
+                        <li><i class="fas fa-square"></i>Get more converted customers!</li>
+                        <li><i class="fas fa-square"></i>get insights of the full analytics.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="subscribe" class="pt-5">
+        <div class="row">
+            <div class="col-xl-3 offset-xl-5">
+                <div style="text-align: left" class="sender-form-field" data-sender-form-id="kyhzkc3sboaxzeic4m1"></div>
+            </div>
+        </div>
+        
+    </div>
+    <div>
+        <!--svg width="100%" height="100%" id="svg" viewBox="0 0 1440 600" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><defs><linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%"><stop offset="5%" stop-color="#002bdc88"></stop><stop offset="95%" stop-color="#32ded488"></stop></linearGradient></defs><path d="M 0,600 C 0,600 0,200 0,200 C 75.76076555023923,242.67942583732057 151.52153110047846,285.35885167464113 246,270 C 340.47846889952154,254.64114832535887 453.67464114832546,181.24401913875602 568,152 C 682.3253588516745,122.755980861244 797.77990430622,137.66507177033492 901,170 C 1004.22009569378,202.33492822966508 1095.2057416267942,252.0956937799043 1183,260 C 1270.7942583732058,267.9043062200957 1355.3971291866028,233.95215311004785 1440,200 C 1440,200 1440,600 1440,600 Z" stroke="none" stroke-width="0" fill="url(#gradient)" class="transition-all duration-300 ease-in-out delay-150 path-0"></path><defs><linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%"><stop offset="5%" stop-color="#002bdcff"></stop><stop offset="95%" stop-color="#32ded4ff"></stop></linearGradient></defs><path d="M 0,600 C 0,600 0,400 0,400 C 120.79425837320576,410.82296650717706 241.58851674641153,421.64593301435406 328,415 C 414.4114832535885,408.35406698564594 466.4401913875597,384.2392344497608 551,395 C 635.5598086124403,405.7607655502392 752.6507177033494,451.3971291866029 871,440 C 989.3492822966506,428.6028708133971 1108.956937799043,360.17224880382776 1204,344 C 1299.043062200957,327.82775119617224 1369.5215311004786,363.9138755980861 1440,400 C 1440,400 1440,600 1440,600 Z" stroke="none" stroke-width="0" fill="url(#gradient)" class="transition-all duration-300 ease-in-out delay-150 path-1"></path></svg-->
+        <!--svg width="100%" height="100%" id="svg" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><defs><linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%"><stop offset="5%" stop-color="#0693e388"></stop><stop offset="95%" stop-color="#5b20b388"></stop></linearGradient></defs><path d="M 0,400 C 0,400 0,133 0,133 C 95.72248803827753,114.93301435406698 191.44497607655506,96.86602870813397 297,95 C 402.55502392344494,93.13397129186603 517.9425837320574,107.46889952153111 623,121 C 728.0574162679426,134.5311004784689 822.7846889952154,147.2583732057416 915,151 C 1007.2153110047846,154.7416267942584 1096.9186602870814,149.4976076555024 1184,145 C 1271.0813397129186,140.5023923444976 1355.5406698564593,136.7511961722488 1440,133 C 1440,133 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" class="transition-all duration-300 ease-in-out delay-150 path-0"></path><defs><linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%"><stop offset="5%" stop-color="#0693e3ff"></stop><stop offset="95%" stop-color="#5b20b3ff"></stop></linearGradient></defs><path d="M 0,400 C 0,400 0,266 0,266 C 100.2870813397129,292 200.5741626794258,318 292,314 C 383.4258373205742,310 465.9904306220095,276 551,253 C 636.0095693779905,229.99999999999997 723.464114832536,217.99999999999997 837,231 C 950.535885167464,244.00000000000003 1090.153110047847,282 1195,292 C 1299.846889952153,302 1369.9234449760766,284 1440,266 C 1440,266 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" class="transition-all duration-300 ease-in-out delay-150 path-1"></path></svg-->
+        <!--svg width="100%" height="100%" id="svg" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><defs><linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%"><stop offset="5%" stop-color="#228cc988"></stop><stop offset="95%" stop-color="#35068988"></stop></linearGradient></defs><path d="M 0,400 C 0,400 0,133 0,133 C 95.72248803827753,114.93301435406698 191.44497607655506,96.86602870813397 297,95 C 402.55502392344494,93.13397129186603 517.9425837320574,107.46889952153111 623,121 C 728.0574162679426,134.5311004784689 822.7846889952154,147.2583732057416 915,151 C 1007.2153110047846,154.7416267942584 1096.9186602870814,149.4976076555024 1184,145 C 1271.0813397129186,140.5023923444976 1355.5406698564593,136.7511961722488 1440,133 C 1440,133 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" class="transition-all duration-300 ease-in-out delay-150 path-0"></path><defs><linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%"><stop offset="5%" stop-color="#228cc9ff"></stop><stop offset="95%" stop-color="#350689ff"></stop></linearGradient></defs><path d="M 0,400 C 0,400 0,266 0,266 C 100.2870813397129,292 200.5741626794258,318 292,314 C 383.4258373205742,310 465.9904306220095,276 551,253 C 636.0095693779905,229.99999999999997 723.464114832536,217.99999999999997 837,231 C 950.535885167464,244.00000000000003 1090.153110047847,282 1195,292 C 1299.846889952153,302 1369.9234449760766,284 1440,266 C 1440,266 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" class="transition-all duration-300 ease-in-out delay-150 path-1"></path></svg-->
+    
+<!--svg id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 410" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(3.237, 46.863, 125.65, 0.68)" offset="0%"></stop><stop stop-color="rgba(63.219, 25.103, 132.48, 0.84)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,205L60,232.3C120,260,240,314,360,293.8C480,273,600,178,720,170.8C840,164,960,246,1080,259.7C1200,273,1320,219,1440,211.8C1560,205,1680,246,1800,218.7C1920,191,2040,96,2160,82C2280,68,2400,137,2520,136.7C2640,137,2760,68,2880,88.8C3000,109,3120,219,3240,218.7C3360,219,3480,109,3600,61.5C3720,14,3840,27,3960,61.5C4080,96,4200,150,4320,177.7C4440,205,4560,205,4680,177.7C4800,150,4920,96,5040,109.3C5160,123,5280,205,5400,198.2C5520,191,5640,96,5760,102.5C5880,109,6000,219,6120,273.3C6240,328,6360,328,6480,321.2C6600,314,6720,301,6840,307.5C6960,314,7080,342,7200,314.3C7320,287,7440,205,7560,170.8C7680,137,7800,150,7920,191.3C8040,232,8160,301,8280,293.8C8400,287,8520,205,8580,164L8640,123L8640,410L8580,410C8520,410,8400,410,8280,410C8160,410,8040,410,7920,410C7800,410,7680,410,7560,410C7440,410,7320,410,7200,410C7080,410,6960,410,6840,410C6720,410,6600,410,6480,410C6360,410,6240,410,6120,410C6000,410,5880,410,5760,410C5640,410,5520,410,5400,410C5280,410,5160,410,5040,410C4920,410,4800,410,4680,410C4560,410,4440,410,4320,410C4200,410,4080,410,3960,410C3840,410,3720,410,3600,410C3480,410,3360,410,3240,410C3120,410,3000,410,2880,410C2760,410,2640,410,2520,410C2400,410,2280,410,2160,410C2040,410,1920,410,1800,410C1680,410,1560,410,1440,410C1320,410,1200,410,1080,410C960,410,840,410,720,410C600,410,480,410,360,410C240,410,120,410,60,410L0,410Z"></path><defs><linearGradient id="sw-gradient-1" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(1.534, 41.409, 29.252, 0.65)" offset="0%"></stop><stop stop-color="rgba(11, 89.693, 255, 0.7)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 50px); opacity:0.9" fill="url(#sw-gradient-1)" d="M0,123L60,129.8C120,137,240,150,360,191.3C480,232,600,301,720,280.2C840,260,960,150,1080,129.8C1200,109,1320,178,1440,177.7C1560,178,1680,109,1800,102.5C1920,96,2040,150,2160,143.5C2280,137,2400,68,2520,34.2C2640,0,2760,0,2880,6.8C3000,14,3120,27,3240,75.2C3360,123,3480,205,3600,225.5C3720,246,3840,205,3960,157.2C4080,109,4200,55,4320,61.5C4440,68,4560,137,4680,143.5C4800,150,4920,96,5040,68.3C5160,41,5280,41,5400,34.2C5520,27,5640,14,5760,13.7C5880,14,6000,27,6120,88.8C6240,150,6360,260,6480,287C6600,314,6720,260,6840,218.7C6960,178,7080,150,7200,136.7C7320,123,7440,123,7560,164C7680,205,7800,287,7920,266.5C8040,246,8160,123,8280,123C8400,123,8520,246,8580,307.5L8640,369L8640,410L8580,410C8520,410,8400,410,8280,410C8160,410,8040,410,7920,410C7800,410,7680,410,7560,410C7440,410,7320,410,7200,410C7080,410,6960,410,6840,410C6720,410,6600,410,6480,410C6360,410,6240,410,6120,410C6000,410,5880,410,5760,410C5640,410,5520,410,5400,410C5280,410,5160,410,5040,410C4920,410,4800,410,4680,410C4560,410,4440,410,4320,410C4200,410,4080,410,3960,410C3840,410,3720,410,3600,410C3480,410,3360,410,3240,410C3120,410,3000,410,2880,410C2760,410,2640,410,2520,410C2400,410,2280,410,2160,410C2040,410,1920,410,1800,410C1680,410,1560,410,1440,410C1320,410,1200,410,1080,410C960,410,840,410,720,410C600,410,480,410,360,410C240,410,120,410,60,410L0,410Z"></path></svg-->
+<svg id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 320" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(3.237, 46.863, 125.65, 0.68)" offset="0%"></stop><stop stop-color="rgba(63.219, 25.103, 132.48, 0.84)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,160L60,181.3C120,203,240,245,360,229.3C480,213,600,139,720,133.3C840,128,960,192,1080,202.7C1200,213,1320,171,1440,165.3C1560,160,1680,192,1800,170.7C1920,149,2040,75,2160,64C2280,53,2400,107,2520,106.7C2640,107,2760,53,2880,69.3C3000,85,3120,171,3240,170.7C3360,171,3480,85,3600,48C3720,11,3840,21,3960,48C4080,75,4200,117,4320,138.7C4440,160,4560,160,4680,138.7C4800,117,4920,75,5040,85.3C5160,96,5280,160,5400,154.7C5520,149,5640,75,5760,80C5880,85,6000,171,6120,213.3C6240,256,6360,256,6480,250.7C6600,245,6720,235,6840,240C6960,245,7080,267,7200,245.3C7320,224,7440,160,7560,133.3C7680,107,7800,117,7920,149.3C8040,181,8160,235,8280,229.3C8400,224,8520,160,8580,128L8640,96L8640,320L8580,320C8520,320,8400,320,8280,320C8160,320,8040,320,7920,320C7800,320,7680,320,7560,320C7440,320,7320,320,7200,320C7080,320,6960,320,6840,320C6720,320,6600,320,6480,320C6360,320,6240,320,6120,320C6000,320,5880,320,5760,320C5640,320,5520,320,5400,320C5280,320,5160,320,5040,320C4920,320,4800,320,4680,320C4560,320,4440,320,4320,320C4200,320,4080,320,3960,320C3840,320,3720,320,3600,320C3480,320,3360,320,3240,320C3120,320,3000,320,2880,320C2760,320,2640,320,2520,320C2400,320,2280,320,2160,320C2040,320,1920,320,1800,320C1680,320,1560,320,1440,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path><defs><linearGradient id="sw-gradient-1" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(1.534, 41.409, 29.252, 0.65)" offset="0%"></stop><stop stop-color="rgba(11, 89.693, 255, 0.7)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 50px); opacity:0.9" fill="url(#sw-gradient-1)" d="M0,96L60,101.3C120,107,240,117,360,149.3C480,181,600,235,720,218.7C840,203,960,117,1080,101.3C1200,85,1320,139,1440,138.7C1560,139,1680,85,1800,80C1920,75,2040,117,2160,112C2280,107,2400,53,2520,26.7C2640,0,2760,0,2880,5.3C3000,11,3120,21,3240,58.7C3360,96,3480,160,3600,176C3720,192,3840,160,3960,122.7C4080,85,4200,43,4320,48C4440,53,4560,107,4680,112C4800,117,4920,75,5040,53.3C5160,32,5280,32,5400,26.7C5520,21,5640,11,5760,10.7C5880,11,6000,21,6120,69.3C6240,117,6360,203,6480,224C6600,245,6720,203,6840,170.7C6960,139,7080,117,7200,106.7C7320,96,7440,96,7560,128C7680,160,7800,224,7920,208C8040,192,8160,96,8280,96C8400,96,8520,192,8580,240L8640,288L8640,320L8580,320C8520,320,8400,320,8280,320C8160,320,8040,320,7920,320C7800,320,7680,320,7560,320C7440,320,7320,320,7200,320C7080,320,6960,320,6840,320C6720,320,6600,320,6480,320C6360,320,6240,320,6120,320C6000,320,5880,320,5760,320C5640,320,5520,320,5400,320C5280,320,5160,320,5040,320C4920,320,4800,320,4680,320C4560,320,4440,320,4320,320C4200,320,4080,320,3960,320C3840,320,3720,320,3600,320C3480,320,3360,320,3240,320C3120,320,3000,320,2880,320C2760,320,2640,320,2520,320C2400,320,2280,320,2160,320C2040,320,1920,320,1800,320C1680,320,1560,320,1440,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+</div>
+
+</main>
+
+<footer class=" py-5">
+  <div class="row">
+    <div class="col-xl-3 offset-xl-4">
+      <h5>Company</h5>
+        <ul class="list-unstyled text-small">
+            <li>
+                <div class="logo-link" title="DemoWave Player">
+                    <a href="https://www.demowave.io" target="_blank"><img src="images/logo7a.png" class="logo-image"/></a>
+                </div>
+            </li>
+            <li><a class="" href="/">DemoWave &copy;2022</a></li>
+        </ul>
+    </div>
+    <div class="col-xl-3">
+      <h5>Contact</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="" href="mailto: info@demowave.io">info@demowave.io</a></li>
+      </ul>
+    </div>
+
+  </div>
+</footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="codeMini.js"></script>
+    <script>
+        (function (s, e, n, d, er) {
+          s['Sender'] = er;
+          s[er] = s[er] || function () {
+            (s[er].q = s[er].q || []).push(arguments)
+          }, s[er].l = 1 * new Date();
+          var a = e.createElement(n),
+              m = e.getElementsByTagName(n)[0];
+          a.async = 1;
+          a.src = d;
+          m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js', 'sender');
+        sender('7a5dc884ba1429')
+      </script>
+    </body>
+</html>
