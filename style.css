@@ -139,6 +139,23 @@ header a:hover {
     margin-bottom: 0.5rem!important;
     color: #422aa7;
 }
+#why .why-card .title{
+    min-height: 100px;
+}
+.for .why-card img {
+    height: 160px;
+    margin: auto;
+}
+.img-contain {
+    display: flex;
+}
+.for .why-card .title {
+    margin-top: 1rem!important;
+    min-height: 66px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .why-card img {
     max-width: 100%;
 }
@@ -431,3 +448,11 @@ footer a {
 footer a:hover {
     color: #a9b7e9;
 }
+@media (max-width: 992px) {
+    .why-block h2 {
+        text-align: center;
+    }
+    .why-card .title {
+        min-height: 45px !important;
+    }
+  }
